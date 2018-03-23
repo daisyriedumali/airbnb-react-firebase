@@ -5,6 +5,6 @@ export const HOME = '/home';
 export const ACCOUNT = '/account';
 export const PASSWORD_FORGET = '/pw-forget';
 
-export const RESERVE = '/reserve';
+export const BOOK_ROOM = "/book/:room";
 export const MY_BOOKINGS = '/my-bookings';
 export const CATALOG = '/catalog';
