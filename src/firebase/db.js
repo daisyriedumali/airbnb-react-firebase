@@ -14,14 +14,16 @@ export const onceGetUsers = () =>
 export const onceGetRooms = () =>
   db.ref('rooms').once('value');
 
-export const doCreateUserReservation = (user_id, room_id, check_in, check_out, guests_ctr, purpose) =>
-  db.ref(`booking`).push({
+export const doCreateUserReservation = (user_id, room_id, check_in, check_out, guests_ctr, title) =>
+  db.ref(`bookings`).push({
     user_id,
     room_id,
     check_in,
     check_out,
     guests_ctr,
-    purpose
+    title
   });
 
+export const onceGetBookingsByUserId = (user_id) =>
+  db.ref('bookings').orderByChild("user_id").equalTo(user_id).once('value');
 // Other Entity APIs ...
