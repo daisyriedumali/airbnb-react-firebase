@@ -6,5 +6,5 @@ export const ACCOUNT = '/account';
 export const PASSWORD_FORGET = '/pw-forget';
 
 export const RESERVE = '/reserve';
-export const VIEW_RESERVATIONS = '/view-reservations';
+export const MY_BOOKINGS = '/my-bookings';
 export const CATALOG = '/catalog';

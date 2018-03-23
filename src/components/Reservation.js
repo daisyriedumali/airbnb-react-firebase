@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
 import withAuthentication from './withAuthentication';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import * as routes from '../constants/routes';
 import { Link } from 'react-router-dom';
+import Header from './common/header';
 
 // Setup the localizer by providing the moment (or globalize) Object
 // to the correct localizer.
@@ -53,18 +54,62 @@ const divStyle = {
 	height: '900px'
 };
 
-const Reservation = props => (
-  <div style={divStyle}>
-  	<Link to={routes.LANDING}>Home</Link>
-    <BigCalendar
-	    events={events}
-	    step={20}
-	    timeslots={8}
-	    defaultView="week"
-	    defaultDate={new Date(2018, 3, 12)}
-	    drilldownView="agenda"
-	  />
-  </div>
-);
+class Reservation extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			view 		 : 'month',
+			day : (new Date(2018, 3, 12))
+		}
+		this.handleNavigate = this.handleNavigate.bind(this);
+		this.handleView = this.handleView.bind(this);
+		this.handleSelectDate = this.handleSelectDate.bind(this);
+		this.handleSelectEvent = this.handleSelectEvent.bind(this);
+	}
+	
+	handleNavigate (day) {
+		this.setState({day: day});
+	}
+	
+	handleView (view) {
+		this.setState({view: view});
+	}
+	
+	handleSelectDate (slotInfo) {
+		console.log(slotInfo);
+		this.setState({view: 'day', day: slotInfo.start});
+	}
+
+	handleSelectEvent (event) {
+		alert(
+            `\nEvent: ${event.title}` + 
+            `\nstart ${event.start.toLocaleString()} ` +
+            `\nend: ${event.end.toLocaleString()}`
+		);
+	}
+
+	render () {
+		return (
+			<div className="landing">
+				<Header />
+				<div style={divStyle}>
+			    	<BigCalendar
+			    		selectable
+					    events={events}
+					    step={10}
+					    timeslots={8}
+					    date={this.state.day}
+					    drilldownView="agenda"
+					    onSelectEvent={this.handleSelectEvent}
+					    view={this.state.view}
+					    onView={this.handleView}
+					    onNavigate={this.handleNavigate}
+					    onSelectSlot={this.handleSelectDate}
+					  />
+			  	</div>
+			</div>
+	  	);
+	}
+}
 
 export default Reservation;

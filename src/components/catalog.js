@@ -1,21 +1,11 @@
 import React from 'react';
-import Navigation from './Navigation';
 import { Link } from 'react-router-dom';
 import * as routes from '../constants/routes';
+import Header from './common/header'
 
 const Catalog = () =>
     <div className='landing'>
-        <header>
-            <div className='header-wrapper'>
-                <a className="app-name">Meeet.</a>
-                <div>
-                    <a className="link">Rooms</a>
-                    <a className="link">My Bookings</a>
-                    <a className="link">Log Out</a>
-                    <div className='user-icon'><img src='' /></div>
-                </div>
-            </div>
-        </header>
+        <Header />
         <h2>Rooms</h2>
         <div className="rooms-wrapper">
             <div className="rooms-row">
