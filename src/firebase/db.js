@@ -14,14 +14,15 @@ export const onceGetUsers = () =>
 export const onceGetRooms = () =>
   db.ref('rooms').once('value');
 
-export const doCreateUserReservation = (user_id, room_id, check_in, check_out, guests_ctr, title) =>
+export const doCreateUserReservation = (user_id, room_id, title, check_in, check_in_timestamp, check_out, check_out_timestamp) =>
   db.ref(`bookings`).push({
     user_id,
     room_id,
+    title,
     check_in,
+    check_in_timestamp,
     check_out,
-    guests_ctr,
-    title
+    check_out_timestamp
   });
 
 export const onceGetBookingsByUserId = (user_id) =>
@@ -29,4 +30,8 @@ export const onceGetBookingsByUserId = (user_id) =>
 
 export const getRoomByRoomId = (room_id) =>
   db.ref(`rooms/${room_id}`).once('value');
+
+export const onceGetBookingsByRoomId = (room_id) =>
+  db.ref('bookings').orderByChild("room_id").equalTo(room_id).once('value');
+
 // Other Entity APIs ...

@@ -26,7 +26,7 @@ class PasswordChangeForm extends Component {
 
     auth.doPasswordUpdate(passwordOne)
       .then(() => {
-        this.setState(() => ({passwordOne:'', passwordTwo:'', error:null, success:'You have successfully reset your password.'}));
+        this.setState(() => ({ passwordOne: '', passwordTwo: '', error: null, success: 'You have successfully reset your password.' }));
       })
       .catch(error => {
         this.setState(byPropKey('error', error));
@@ -49,20 +49,23 @@ class PasswordChangeForm extends Component {
     return (
       <div className='pw-change'>
         <form onSubmit={this.onSubmit}>
+          <label htmlFor="">New Password</label>
           <input
             value={passwordOne}
             onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
             type="password"
             placeholder="New Password"
           />
+          <label htmlFor="">Confirm New Password</label>
           <input
+            className="confirm-password"
             value={passwordTwo}
             onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
             type="password"
             placeholder="Confirm New Password"
           />
-          { this.state.success && <p className='error-msg'>{this.state.success}</p> }
-          { error && <p className='error-msg'>{error.message}</p> }
+          {this.state.success && <p className='error-msg'>{this.state.success}</p>}
+          {error && <p className='error-msg'>{error.message}</p>}
           <div className='pw-change-btn'>
             <button disabled={isInvalid} type="submit">
               Reset My Password

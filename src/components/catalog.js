@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { db } from '../firebase';
+import { db, firebase } from '../firebase';
 import * as routes from '../constants/routes';
 import Header from './common/header'
 import Room from './Room'
@@ -8,15 +8,19 @@ import Room from './Room'
 class Catalog extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
-          rooms        : []
+          rooms        : [],
+          authUser     : null
         };
 
         this.getRooms = this.getRooms.bind(this);
     }
 
     componentWillMount() {
+        firebase.auth.onAuthStateChanged(authUser => {
+          this.setState(() => ({ authUser }));
+        });
+
         db.onceGetRooms().then(snapshot => {
             this.setState(() => ({rooms : snapshot.val()}));
         });
@@ -42,16 +46,22 @@ class Catalog extends Component {
             <div className='landing'>
                 <Header />
                 <div className="landing-wrapper width-lg">
-                    <h2>Rooms</h2>
-                    <div className="rooms-wrapper">
-                        <div className="rooms-row">
-                            {this.getRooms(0, 2)}
+                    {this.state.authUser ?
+                        <div>
+                            <h2>Rooms</h2>
+                            <div className="rooms-wrapper">
+                                <div className="rooms-row">
+                                    {this.getRooms(0, 2)}
+                                </div>
+                                <div className="rooms-row">
+                                    {this.getRooms(2, 5)}
+                                </div>
+                            </div> 
+                        </div> :
+                        <div>
+                            <img />
                         </div>
-                        <div className="rooms-row">
-                            {this.getRooms(2, 5)}
-                        </div>
-                    </div>
-                    
+                    }
                 </div>
 
             </div>
