@@ -29,7 +29,7 @@ class Catalog extends Component {
         Object.keys(rooms).forEach(function(id) {
             if(ctr >= start && ctr < end) {
                 var val = rooms[id];
-                roomComp.push(<Room room={val} key={id}/>);
+                roomComp.push(<Room room={val} room_id={id} key={id}/>);
             }
             ctr++;
         });

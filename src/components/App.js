@@ -27,7 +27,7 @@ const App = () =>
       <Route exact path={routes.PASSWORD_FORGET}    component={() => <PasswordForgetPage />} />
       <Route exact path={routes.ACCOUNT}            component={() => <AccountPage />} />
       <Route exact path={routes.HOME}               component={() => <HomePage />} />
-      <Route exact path={routes.RESERVE}            component={() => <MakeReservation />} />
+      <Route path={routes.BOOK_ROOM}          component={() => <MakeReservation />} />
       <Route exact path={routes.MY_BOOKINGS}        component={() => <MyBookings />} />
     </div>
   </Router>

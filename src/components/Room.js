@@ -21,10 +21,11 @@ class Room extends Component {
                 <div className="room-photo">
                     {this.getPhotos()}
                 </div>
-                <h3 className="name">{this.props.room.name}</h3>
+                <h3 className="name"><Link to={`/book/${this.props.room_id}`}>{this.props.room.name}</Link></h3>
                 <p className="description">{this.props.room.description}</p>
             </div>
         )
     }
 }
+
 export default Room;

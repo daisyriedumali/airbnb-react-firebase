@@ -31,10 +31,9 @@ const NavigationAuth = () => {
                     
                     <Link className="link" to={routes.LANDING}>Rooms</Link>
                     <Link className="link" to={routes.MY_BOOKINGS}>My Bookings</Link>
-                    <Link className="link" to={''}>Logout</Link>
+                    <Link className="link" to={'Logout'}>Logout</Link>
                     <Link to={routes.ACCOUNT}>
                         <div className='user-icon'>
-                            <img src='' />                        
                         </div>
                     </Link>
                 </div>
