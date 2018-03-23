@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import * as routes from '../constants/routes';
 import Header from './common/header';
 import DateTime from 'react-datetime';
-import '../styles/react-datetime.scss';
+import '../styles/react-datetime.css';
 import moment from 'moment';
 import { auth, db, firebase } from '../firebase';
 import PropTypes from 'prop-types';
