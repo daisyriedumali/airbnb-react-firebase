@@ -48,30 +48,35 @@ class MyBookings extends Component {
     db.onceGetBookingsByUserId(this.state.authUser.uid).then(snapshot => {
       let time_now = new Date();
       let timestamp = time_now.getTime();
-
       let val = snapshot.val();
-      let bookings = [];
-      Object.keys(val).forEach(function (id) {
-        let _b = val[id];
-        _b.id = id;
-        bookings.push(val[id]);
-      });
 
-      bookings.sort(function (a, b) {
-        return a.check_in_timestamp - b.check_in_timestamp;
-      });
+      if (val != null && val != undefined && Object.keys(val).length > 0) {
+        let bookings = [];
+        Object.keys(val).forEach(function (id) {
+          let _b = val[id];
+          _b.id = id;
+          bookings.push(val[id]);
+        });
 
-      let past_bookings = [];
-      let future_bookings = [];
-      bookings.forEach(function (booking) {
-        if (timestamp > booking.check_in_timestamp) {
-          past_bookings.push(booking);
-        } else {
-          future_bookings.push(booking);
-        }
-      });
+        bookings.sort(function (a, b) {
+          return a.check_in_timestamp - b.check_in_timestamp;
+        });
 
-      this.setState(() => ({ bookings: snapshot.val(), past_bookings: past_bookings, future_bookings: future_bookings }));
+        let past_bookings = [];
+        let future_bookings = [];
+        bookings.forEach(function (booking) {
+          if (timestamp > booking.check_in_timestamp) {
+            past_bookings.push(booking);
+          } else {
+            future_bookings.push(booking);
+          }
+        });
+
+        this.setState(() => ({ bookings: snapshot.val(), past_bookings: past_bookings, future_bookings: future_bookings }));
+      } else {
+        this.setState(() => ({ bookings: [], past_bookings: [], future_bookings: [] }));
+      }
+
     });
   }
 
