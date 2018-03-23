@@ -4,8 +4,7 @@ body {
   padding: 0;
   margin: 0;
   background-color: #fff;
-  font-family: Helvetica, Sans-Serif;
-}
+  font-family: Helvetica, Sans-Serif; }
 
 #root {
   position: absolute;
@@ -14,18 +13,16 @@ body {
   left: 0;
   right: 0;
   margin: 0 auto 30px auto;
-  width: 400px;
+  /*width: 400px;*/
   box-shadow: 0px .5px .5px .5px #cecece;
   background-image: url("../images/bg1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  background-color: #e8e1e7;
-}
+  background-color: #e8e1e7; }
 
 #content {
-  min-height: 100%;
-}
+  min-height: 100%; }
 
 .landing-logo {
   background-image: url("../images/logo.png");
@@ -34,36 +31,30 @@ body {
   background-size: 300px;
   background-repeat: no-repeat;
   background-position: center center;
-  margin: 100px auto 20px;
-}
+  margin: 100px auto 20px; }
 
 .landing h1 {
   text-align: center;
   color: white;
   font-size: 60px;
-  margin: 0px auto;
-}
+  margin: 0px auto; }
 
 .landing h1 a {
-  text-decoration:  none;
-  color: white;
-}
+  text-decoration: none;
+  color: white; }
 
 .landing ul {
   list-style: none;
   text-align: center;
   padding: 0;
-  text-decoration: none;
-}
+  text-decoration: none; }
 
 .landing ul li {
-  padding-top: 3px;
-}
+  padding-top: 3px; }
 
 .landing ul li a {
-  text-decoration:  none;
-  color: white;
-}
+  text-decoration: none;
+  color: white; }
 
 .sign-in h1, .pw-forgot h1, .sign-up h1 {
   text-align: center;
@@ -71,25 +62,21 @@ body {
   font-size: 40px;
   margin: 0px auto;
   margin-top: 40%;
-  margin-bottom: 30px;
-}
+  margin-bottom: 30px; }
 
 .sign-in form, .pw-forgot form, .sign-up form, .pw-change form, .links-page form {
   width: 90%;
-  margin: 0 auto;
-}
+  margin: 0 auto; }
 
 .sign-in form input, .pw-forgot form input, .sign-up form input, .pw-change form input, .links-page form input {
   width: 95%;
   padding: 7px 7px;
   margin: 5px 0px;
-  border: 0;
-}
+  border: 0; }
 
 .sign-in form .sign-in-btn, .pw-forgot form .pw-forgot-btn, .sign-up form .sign-up-btn, .pw-change form .pw-change-btn, .links-page form .add-link {
   width: 100%;
-  display: flex;
-}
+  display: flex; }
 
 .landing button, .sign-in form .sign-in-btn button, .pw-forgot form .pw-forgot-btn button, .sign-up form .sign-up-btn button, .pw-change form .pw-change-btn button, .links-page form .add-link button {
   margin: 0 auto;
@@ -99,8 +86,7 @@ body {
   border-radius: 3px;
   background-color: #f08b8b;
   color: #ffffff;
-  border: 0;
-}
+  border: 0; }
 
 .sign-in .landing-logo {
   background-image: url("../images/logo.png");
@@ -109,19 +95,16 @@ body {
   background-size: 70px;
   background-repeat: no-repeat;
   background-position: center center;
-  margin: 100px auto 20px;
-}
+  margin: 100px auto 20px; }
 
 .sign-in .forgot-pw, .sign-in .no-account {
   text-align: center;
   margin: 10px 0;
-  font-size: 13px;
-}
+  font-size: 13px; }
 
 .sign-in .forgot-pw a, .sign-in .no-account a {
-  text-decoration:  none;
-  color: #f08b8b;
-}
+  text-decoration: none;
+  color: #f08b8b; }
 
 .pw-forgot .landing-logo, .sign-up .landing-logo {
   background-image: url("../images/logo.png");
@@ -130,8 +113,7 @@ body {
   background-size: 70px;
   background-repeat: no-repeat;
   background-position: center center;
-  margin: 200px auto 20px;
-}
+  margin: 200px auto 20px; }
 
 .sign-up .landing-logo {
   background-image: url("../images/logo.png");
@@ -140,20 +122,17 @@ body {
   background-size: 70px;
   background-repeat: no-repeat;
   background-position: center center;
-  margin: 150px auto 20px;
-}
+  margin: 150px auto 20px; }
 
 .acc-page-main .wrap {
-  word-wrap: break-word;
-}
+  word-wrap: break-word; }
 
 .acc-page-main h2, .links-page h2, .links-page h1 {
   text-align: center;
   color: white;
-  margin: 0px auto;
-}
+  margin: 0px auto; }
 
-.acc-page-main .person-icon{
+.acc-page-main .person-icon {
   background-image: url("../images/person.png");
   width: 80px;
   height: 80px;
@@ -161,12 +140,10 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
   margin: 50px auto 10px;
-  border-radius: 50px;
-}
+  border-radius: 50px; }
 
 .acc-page-main .details {
-  margin: 50px 20px 10px;
-}
+  margin: 50px 20px 10px; }
 
 .acc-page {
   margin-top: 300px;
@@ -175,21 +152,16 @@ body {
   bottom: 50px;
   right: 25%;
   left: 25%;
-  position: absolute;
-}
+  position: absolute; }
 
 .acc-page a {
-  text-decoration:  none;
+  text-decoration: none;
   color: #ffe1e1;
-  font-size: 13px;
-}
+  font-size: 13px; }
 
 .error-msg {
   font-size: 12px;
   font-style: italic;
   color: #f08b8b;
   margin: 0;
-  margin-bottom: 5px;
-}
-
-
+  margin-bottom: 5px; }

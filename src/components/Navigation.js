@@ -19,6 +19,8 @@ Navigation.contextTypes = {
 const NavigationAuth = () =>
   <ul>
     <li><Link to={routes.ACCOUNT}>My Account</Link></li>
+    <li><Link to={routes.RESERVE}>Make a reservation</Link></li>
+    <li><Link to={routes.VIEW_RESERVATIONS}>View Reservations</Link></li>
     <li><SignOutButton /></li>
   </ul>
 
