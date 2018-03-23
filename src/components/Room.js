@@ -8,7 +8,7 @@ const Room = ({room}) =>
         <div className="room-photo">
             <img src={room.photo} alt="" />
         </div>
-        <h3 className="name">{room.name}</h3>
+        <h3 className="name"><Link to={`/book/${room.id}`}>{room.name}</Link></h3>
         <p className="description">{room.description}</p>
-    </div>
+    </div>   
 export default Room;
