@@ -269,7 +269,7 @@ header {
     flex-wrap: wrap;
     .room-card {
       width: 396px;
-      height: 379px;
+      height: 430px;
       margin-right: 30px;
       margin-bottom: 42px;
       &:nth-child(3n) {
@@ -286,6 +286,18 @@ header {
           height: 100%;
         }
       }
+      .cancel-booking {
+        cursor: pointer;
+        font-size: 18px;
+        font-family: Circular-Medium;
+        background: none;
+        border: 1px solid #FD5C63;
+        border-radius: 3px;
+        padding: 6px 10px;
+        margin-top: 10px;
+        color: #FD5C63;
+      }
+
       h3 {
         font-size: 24px;
         font-family: Circular-Heavy;
