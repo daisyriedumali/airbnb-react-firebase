@@ -7,9 +7,9 @@ class Room extends Component {
     getPhotos() {
         let photos = this.props.room.photos;
         let img = [];
-        Object.keys(photos).forEach(function(key) {
-          var val = photos[key];
-          img.push(<img src={val} key={key}/>);
+        Object.keys(photos).forEach(function (key) {
+            var val = photos[key];
+            img.push(<img src={val} key={key} />);
         });
 
         return img;
