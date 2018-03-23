@@ -24,7 +24,9 @@ class MakeReservation extends Component {
       endDateTime   : curDate,
       startDateTimeTimestamp : curDate.getTime(),
       endDateTimeTimeTimestamp : curDate.getTime(),
-      events: []
+      events: [],
+      view     : 'month',
+      day : (new Date(2018, 3, 12))
     }  
 
     this.handleSubmit = this.handleSubmit.bind(this);
