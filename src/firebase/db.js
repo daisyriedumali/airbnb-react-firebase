@@ -11,14 +11,15 @@ export const doCreateUser = (id, username, email) =>
 export const onceGetUsers = () =>
   db.ref('users').once('value');
 
-export const doCreateUserReservation = (user_id, room_id, check_in, check_out, guests_ctr, purpose) =>
-  db.ref(`booking`).push({
+export const doCreateUserReservation = (user_id, room_id, title, check_in, check_in_timestamp, check_out, check_out_timestamp) =>
+  db.ref(`bookings`).push({
     user_id,
     room_id,
+    title,
     check_in,
+    check_in_timestamp,
     check_out,
-    guests_ctr,
-    purpose
+    check_out_timestamp
   });
 
 // Other Entity APIs ...

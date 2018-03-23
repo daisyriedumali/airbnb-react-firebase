@@ -4,18 +4,17 @@ import * as routes from '../../constants/routes';
 import PropTypes from 'prop-types';
 
 const Header = (props, { authUser }) => {
-  if (typeof authUser != 'undefined') {
-    return  (
-        <div>
-            { authUser
-                ? <NavigationAuth />
-                : <NavigationNonAuth />
-            }
-        </div>
-    )
-  } else {
+    if (typeof authUser != 'undefined') {
+        return  (
+            <div>
+                { authUser
+                    ? <NavigationAuth />
+                    : <NavigationNonAuth />
+                }
+            </div>
+        )
+    }
     return null;
-  }
 }
 
 Header.contextTypes = {
