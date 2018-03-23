@@ -19,6 +19,9 @@ a {
   min-height: 100%; }
 
 header {
+  position: fixed;
+  width: 100%;
+  top: 0;
   height: 80px;
   background: #25265E;
   display: flex;
@@ -58,145 +61,156 @@ header {
     width: 40px;
     border-radius: 40px; }
 
-.landing h2 {
-  font-family: Circular-Medium;
-  font-size: 32px;
-  margin-bottom: 24px; }
-
-.landing .rooms-wrapper .rooms-row {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 60px; }
-  .landing .rooms-wrapper .rooms-row .room-card.large {
-    margin-right: 30px;
-    width: 610px; }
-    .landing .rooms-wrapper .rooms-row .room-card.large:last-child {
-      margin-right: 0; }
-  .landing .rooms-wrapper .rooms-row .room-card.small {
-    margin-right: 30px;
-    width: 396px; }
-    .landing .rooms-wrapper .rooms-row .room-card.small:last-child {
-      margin-right: 0; }
-  .landing .rooms-wrapper .rooms-row .room-card .room-photo {
-    background: #cecece;
-    width: 100%;
-    height: 275px;
-    margin-bottom: 18px;
-    overflow: hidden; }
-    .landing .rooms-wrapper .rooms-row .room-card .room-photo img {
-      object-fit: cover;
+.landing {
+  margin-top: 110px; }
+  .landing h2 {
+    font-family: Circular-Medium;
+    font-size: 32px;
+    margin-bottom: 24px;
+    color: #26275D; }
+  .landing .rooms-wrapper .rooms-row {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 60px; }
+    .landing .rooms-wrapper .rooms-row .room-card.large {
+      margin-right: 30px;
+      width: 610px; }
+      .landing .rooms-wrapper .rooms-row .room-card.large:last-child {
+        margin-right: 0; }
+    .landing .rooms-wrapper .rooms-row .room-card.small {
+      margin-right: 30px;
+      width: 396px; }
+      .landing .rooms-wrapper .rooms-row .room-card.small:last-child {
+        margin-right: 0; }
+    .landing .rooms-wrapper .rooms-row .room-card .room-photo {
+      background: #cecece;
       width: 100%;
-      height: 100%; }
-  .landing .rooms-wrapper .rooms-row .room-card .name {
-    font-family: Circular-Heavy;
-    font-size: 24px;
-    margin-bottom: 8px; }
-  .landing .rooms-wrapper .rooms-row .room-card .description {
-    margin: 0;
-    font-family: Circular-Light;
-    font-size: 18px; }
-
-.reserve-wrapper h2 {
-  font-family: Circular-Medium;
-  font-size: 32px;
-  margin-bottom: 24px; }
-
-.reserve-wrapper .top-row {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  margin-bottom: 48px; }
-  .reserve-wrapper .top-row .booking-form {
-    background: #F8F9FC;
-    width: 396px;
-    height: 395px;
-    margin-right: 30px;
-    padding: 50px 38px; }
-    .reserve-wrapper .top-row .booking-form form {
-      display: flex;
-      flex-direction: column; }
-      .reserve-wrapper .top-row .booking-form form label {
-        font-size: 20px;
-        font-family: Circular-Medium;
-        margin-bottom: 8px; }
-      .reserve-wrapper .top-row .booking-form form input {
-        font-size: 20px;
-        font-family: Circular-Light;
-        max-width: 100%;
-        height: 50px;
-        padding: 0 16px;
-        background: #fff;
-        border: 1px solid #D5D5D5;
-        border-radius: 3px;
-        margin-bottom: 32px; }
-      .reserve-wrapper .top-row .booking-form form .book-cta {
-        color: #fff;
-        font-size: 20px;
-        font-family: Circular-Medium;
-        border-radius: 3px;
-        border: 1px solid #06B14C;
+      height: 275px;
+      margin-bottom: 18px;
+      overflow: hidden; }
+      .landing .rooms-wrapper .rooms-row .room-card .room-photo img {
+        object-fit: cover;
         width: 100%;
-        height: 50px;
-        background: #06B14C;
-        box-shadow: 0 3px 15px 0 rgba(6, 167, 71, 0.4); }
-  .reserve-wrapper .top-row .room-information {
-    width: 823px; }
-    .reserve-wrapper .top-row .room-information .room-photo {
-      height: 420px; }
-      .reserve-wrapper .top-row .room-information .room-photo img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; }
-    .reserve-wrapper .top-row .room-information h4 {
-      font-size: 22px;
+        height: 100%; }
+    .landing .rooms-wrapper .rooms-row .room-card .name {
       font-family: Circular-Heavy;
-      margin-bottom: 12px; }
-    .reserve-wrapper .top-row .room-information p {
-      font-size: 18px;
+      font-size: 24px;
+      margin-bottom: 8px; }
+      .landing .rooms-wrapper .rooms-row .room-card .name a {
+        text-decoration: none;
+        color: #26275D; }
+    .landing .rooms-wrapper .rooms-row .room-card .description {
+      margin: 0;
       font-family: Circular-Light;
-      margin: 0; }
+      font-size: 18px; }
 
-.reserve-wrapper .calendar-wrapper {
-  background: #F8F9FC;
-  height: 500px;
-  margin-bottom: 50px; }
+.reserve-wrapper {
+  margin-top: 110px; }
+  .reserve-wrapper h2 {
+    font-family: Circular-Medium;
+    font-size: 32px;
+    margin-bottom: 24px;
+    color: #26275D; }
+  .reserve-wrapper .top-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 48px; }
+    .reserve-wrapper .top-row .booking-form {
+      background: #F8F9FC;
+      width: 396px;
+      height: 395px;
+      margin-right: 30px;
+      padding: 50px 38px; }
+      .reserve-wrapper .top-row .booking-form form {
+        display: flex;
+        flex-direction: column; }
+        .reserve-wrapper .top-row .booking-form form label {
+          font-size: 20px;
+          font-family: Circular-Medium;
+          margin-bottom: 8px; }
+        .reserve-wrapper .top-row .booking-form form input {
+          font-size: 20px;
+          font-family: Circular-Light;
+          max-width: 100%;
+          height: 50px;
+          padding: 0 16px;
+          background: #fff;
+          border: 1px solid #D5D5D5;
+          border-radius: 3px;
+          margin-bottom: 32px; }
+        .reserve-wrapper .top-row .booking-form form .book-cta {
+          color: #fff;
+          font-size: 20px;
+          font-family: Circular-Medium;
+          border-radius: 3px;
+          border: 1px solid #06B14C;
+          width: 100%;
+          height: 50px;
+          background: #06B14C;
+          box-shadow: 0 3px 15px 0 rgba(6, 167, 71, 0.4); }
+    .reserve-wrapper .top-row .room-information {
+      width: 823px; }
+      .reserve-wrapper .top-row .room-information .room-photo {
+        height: 420px; }
+        .reserve-wrapper .top-row .room-information .room-photo img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover; }
+      .reserve-wrapper .top-row .room-information h4 {
+        font-size: 22px;
+        font-family: Circular-Heavy;
+        margin-bottom: 12px; }
+      .reserve-wrapper .top-row .room-information p {
+        font-size: 18px;
+        font-family: Circular-Light;
+        margin: 0; }
+  .reserve-wrapper .calendar-wrapper {
+    background: #F8F9FC;
+    height: 500px;
+    margin-bottom: 50px; }
 
-.bookings-wrapper h2 {
-  font-family: Circular-Medium;
-  font-size: 32px;
-  margin-bottom: 24px; }
-
-.landing-logo {
-  background-image: url("/images/logo.png");
-  width: 200px;
-  height: 200px;
-  background-size: 300px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  margin: 100px auto 20px; }
-
-.landing h1 {
-  text-align: center;
-  color: white;
-  font-size: 60px;
-  margin: 0px auto; }
-
-.landing h1 a {
-  text-decoration: none;
-  color: white; }
-
-.landing ul {
-  list-style: none;
-  text-align: center;
-  padding: 0;
-  text-decoration: none; }
-
-.landing ul li {
-  padding-top: 3px; }
-
-.landing ul li a {
-  text-decoration: none;
-  color: white; }
+.bookings-wrapper {
+  margin-top: 110px; }
+  .bookings-wrapper h2 {
+    font-family: Circular-Medium;
+    font-size: 32px;
+    margin-bottom: 24px;
+    color: #26275D; }
+  .bookings-wrapper hr {
+    border: 0.5px solid #25265E; }
+  .bookings-wrapper .upcoming-wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; }
+    .bookings-wrapper .upcoming-wrapper .room-card {
+      width: 396px;
+      height: 379px;
+      margin-right: 30px;
+      margin-bottom: 42px; }
+      .bookings-wrapper .upcoming-wrapper .room-card:nth-child(3n) {
+        margin-right: 0; }
+      .bookings-wrapper .upcoming-wrapper .room-card .room-photo {
+        overflow: hidden;
+        width: 100%;
+        height: 275px;
+        margin-bottom: 16px; }
+        .bookings-wrapper .upcoming-wrapper .room-card .room-photo img {
+          object-fit: cover;
+          width: 100%;
+          height: 100%; }
+      .bookings-wrapper .upcoming-wrapper .room-card h3 {
+        font-size: 24px;
+        font-family: Circular-Heavy;
+        margin: 0 0 8px;
+        color: #26275D; }
+        .bookings-wrapper .upcoming-wrapper .room-card h3 a {
+          text-decoration: none; }
+      .bookings-wrapper .upcoming-wrapper .room-card p {
+        margin: 0;
+        font-size: 18px;
+        line-height: 26px;
+        font-family: Circular-Light; }
 
 .sign-in h1, .pw-forgot h1, .sign-up h1 {
   text-align: center;
