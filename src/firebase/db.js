@@ -11,6 +11,9 @@ export const doCreateUser = (id, username, email) =>
 export const onceGetUsers = () =>
   db.ref('users').once('value');
 
+export const onceGetUserByUserId = (user_id) =>
+  db.ref(`users/${user_id}`).once('value');
+
 export const onceGetRooms = () =>
   db.ref('rooms').once('value');
 

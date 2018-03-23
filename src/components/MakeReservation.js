@@ -67,6 +67,7 @@ class MakeReservation extends Component {
             start: new Date(book.check_in_timestamp),
             end: new Date(book.check_out_timestamp),
             desc: '',
+            user_id: book.user_id
           }
         });
         this.setState({ events: events });
@@ -89,11 +90,19 @@ class MakeReservation extends Component {
   }
 
   handleSelectEvent (event) {
-    alert(
-            `\nEvent: ${event.title}` + 
-            `\nstart ${event.start.toLocaleString()} ` +
-            `\nend: ${event.end.toLocaleString()}`
-    );
+    db.onceGetUserByUserId(event.user_id)
+      .then((result) => {
+        let user = result.val();
+        alert(
+                `\nEvent: ${event.title}` + 
+                `\nStart ${event.start.toLocaleString()} ` +
+                `\nEnd: ${event.end.toLocaleString()}` +
+                `\nOwner: ${user.username}`
+        );
+      })
+      .catch(error => {
+        console.log(error);
+    });
   }
 
   handleStartDateTimeChange(dateTime) {
