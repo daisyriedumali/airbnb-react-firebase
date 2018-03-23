@@ -7,10 +7,7 @@ import * as routes from '../constants/routes';
 import { Link } from 'react-router-dom';
 import Header from './common/header';
 
-// Setup the localizer by providing the moment (or globalize) Object
-// to the correct localizer.
 BigCalendar.momentLocalizer(moment); // or globalizeLocalizer
-// BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment));
 
 const events = [
 	{
@@ -51,6 +48,7 @@ const events = [
 
 const divStyle = {
 	width: '100%',
+	maxWidth: '1260px',
 	height: '900px'
 };
 

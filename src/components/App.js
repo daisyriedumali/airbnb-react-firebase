@@ -14,6 +14,7 @@ import MakeReservation from './MakeReservation';
 import * as routes from '../constants/routes';
 import Catalog from './catalog';
 import withAuthentication from './withAuthentication';
+import MyBookings from './MyBookings';
 
 import '../styles/app.css';
 
@@ -27,7 +28,7 @@ const App = () =>
       <Route exact path={routes.ACCOUNT}            component={() => <AccountPage />} />
       <Route exact path={routes.HOME}               component={() => <HomePage />} />
       <Route exact path={routes.RESERVE}            component={() => <MakeReservation />} />
-      <Route exact path={routes.MY_BOOKINGS}  component={() => <Reservations />} />
+      <Route exact path={routes.MY_BOOKINGS}        component={() => <MyBookings />} />
     </div>
   </Router>
 

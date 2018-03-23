@@ -162,7 +162,7 @@ header {
   margin-bottom: 50px; }
 
 .landing-logo {
-  background-image: url("../images/logo.png");
+  /*background-image: url("../images/logo.png");*/
   width: 200px;
   height: 200px;
   background-size: 300px;
@@ -226,7 +226,7 @@ header {
   border: 0; }
 
 .sign-in .landing-logo {
-  background-image: url("../images/logo.png");
+  /*background-image: url("../images/logo.png");*/
   width: 50px;
   height: 50px;
   background-size: 70px;
@@ -244,7 +244,7 @@ header {
   color: #f08b8b; }
 
 .pw-forgot .landing-logo, .sign-up .landing-logo {
-  background-image: url("../images/logo.png");
+  /*background-image: url("../images/logo.png");*/
   width: 50px;
   height: 50px;
   background-size: 70px;
@@ -253,7 +253,7 @@ header {
   margin: 200px auto 20px; }
 
 .sign-up .landing-logo {
-  background-image: url("../images/logo.png");
+  /*background-image: url("../images/logo.png");*/
   width: 50px;
   height: 50px;
   background-size: 70px;
@@ -270,7 +270,7 @@ header {
   margin: 0px auto; }
 
 .acc-page-main .person-icon {
-  background-image: url("../images/person.png");
+  /*background-image: url("../images/person.png");*/
   width: 80px;
   height: 80px;
   background-size: 70px;
