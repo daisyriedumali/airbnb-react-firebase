@@ -7,6 +7,8 @@ import '../styles/react-datetime.css';
 import moment from 'moment';
 import { auth, db, firebase } from '../firebase';
 import PropTypes from 'prop-types';
+import BigCalendar from 'react-big-calendar';
+BigCalendar.momentLocalizer(moment); // or globalizeLocalizer
 
 class MakeReservation extends Component {
   constructor(props) {
@@ -14,22 +16,70 @@ class MakeReservation extends Component {
     var curDate = new Date();
     this.state = {
       title         : '',
+      desc          : '',
       roomId        : props.params.match.params.room,
       startDateTime : curDate,
       endDateTime   : curDate,
       startDateTimeTimestamp : curDate.getTime(),
-      endDateTimeTimeTimestamp : curDate.getTime()
+      endDateTimeTimeTimestamp : curDate.getTime(),
+      events: []
     }
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleStartDateTimeChange = this.handleStartDateTimeChange.bind(this);
     this.handleEndDateTimeChange = this.handleEndDateTimeChange.bind(this);
     this.validate = this.validate.bind(this);
+    this.handleNavigate = this.handleNavigate.bind(this);
+    this.handleView = this.handleView.bind(this);
+    this.handleSelectDate = this.handleSelectDate.bind(this);
+    this.handleSelectEvent = this.handleSelectEvent.bind(this);
   }
-
-  componentWillMount() {
+  
+  componentDidMount() {
     firebase.auth.onAuthStateChanged(authUser => {
       this.setState(() => ({ authUser }));
     });
+    this.getEvents();
+  }
+
+  getEvents() {
+    db.onceGetBookingsByRoomId(this.state.roomId)
+      .then((result) => {
+        let bookings = Object.values(result.val());
+        let events = bookings.map((book, index) => {
+          return {
+            title: book.title,
+            start: new Date(book.check_in_timestamp),
+            end: new Date(book.check_out_timestamp),
+            desc: '',
+          }
+        });
+        this.setState({ events: events });
+      })
+      .catch(error => {
+        console.log(error);
+    });
+  }
+
+  handleNavigate (day) {
+    this.setState({day: day});
+  }
+  
+  handleView (view) {
+    this.setState({view: view});
+  }
+  
+  handleSelectDate (slotInfo) {
+    console.log(slotInfo);
+    this.setState({view: 'day', day: slotInfo.start});
+  }
+
+  handleSelectEvent (event) {
+    alert(
+            `\nEvent: ${event.title}` + 
+            `\nstart ${event.start.toLocaleString()} ` +
+            `\nend: ${event.end.toLocaleString()}`
+    );
   }
 
   handleStartDateTimeChange(dateTime) {
@@ -47,7 +97,7 @@ class MakeReservation extends Component {
     let uid = (this.state.authUser != null) ? this.state.authUser.uid : '';
     db.doCreateUserReservation(uid, this.state.roomId, this.state.title, this.state.startDateTime, this.state.startDateTimeTimestamp, this.state.endDateTime, this.state.endDateTimeTimeTimestamp)
       .then((result) => {
-        console.log(result);
+        console.log(result.val());
       })
       .catch(error => {
         console.log(error);
@@ -98,7 +148,21 @@ class MakeReservation extends Component {
               </div>
             </div>
           </div>
-          <div className="calendar-wrapper width-lg"></div>
+          <div className="calendar-wrapper width-lg">
+            <BigCalendar
+              selectable
+              events={this.state.events}
+              step={10}
+              timeslots={8}
+              date={this.state.day}
+              drilldownView="agenda"
+              onSelectEvent={this.handleSelectEvent}
+              view={this.state.view}
+              onView={this.handleView}
+              onNavigate={this.handleNavigate}
+              onSelectSlot={this.handleSelectDate}
+            />
+          </div>
         </div>
       </div>
     );
