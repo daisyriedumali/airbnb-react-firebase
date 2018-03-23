@@ -46,7 +46,9 @@ header {
       margin-right: 0; }
     header a.app-name {
       font-family: Circular-Heavy;
-      font-size: 32px; }
+      font-size: 32px;
+      color: #fff;
+      text-decoration: none; }
     header a.link {
       font-family: Circular-Light;
       font-size: 20px;
@@ -108,6 +110,31 @@ header {
       margin: 0;
       font-family: Circular-Light;
       font-size: 18px; }
+  .landing .home-wrapper {
+    display: flex;
+    flex-direction: row; }
+    .landing .home-wrapper article {
+      display: flex;
+      flex-direction: column;
+      color: #26275D;
+      width: 434px;
+      margin-right: 90px;
+      justify-content: center; }
+      .landing .home-wrapper article h1 {
+        font-size: 72px;
+        line-height: 80px;
+        font-family: Circular-Heavy;
+        margin-bottom: 5px;
+        margin-top: 0; }
+      .landing .home-wrapper article p {
+        font-size: 40px;
+        font-family: Circular-Medium;
+        margin: 0; }
+    .landing .home-wrapper .image-wrapper {
+      width: 740px; }
+      .landing .home-wrapper .image-wrapper img {
+        object-fit: cover;
+        width: 100%; }
 
 .reserve-wrapper {
   margin-top: 110px; }

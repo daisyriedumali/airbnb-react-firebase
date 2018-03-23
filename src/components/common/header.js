@@ -25,9 +25,9 @@ Header.contextTypes = {
 const NavigationAuth = () => {
     const logout = (e) => {
         e.preventDefault();
-        firebase.auth.signOut().then(function() {
+        firebase.auth.signOut().then(function () {
             window.location.href = routes.LANDING;
-        }, function(error) {
+        }, function (error) {
             console.log(error);
         });
     }
@@ -35,7 +35,7 @@ const NavigationAuth = () => {
     return (
         <header>
             <div className='header-wrapper'>
-                <a className="app-name">Meeet.</a>
+                <Link className="app-name" to={routes.LANDING}>Meeet.</Link>
                 <div>
 
                     <Link className="link" to={routes.LANDING}>Rooms</Link>
@@ -54,7 +54,7 @@ const NavigationNonAuth = () => {
     return (
         <header>
             <div className='header-wrapper'>
-                <a className="app-name">Meeet.</a>
+                <Link className="app-name" to={routes.LANDING}>Meeet.</Link>
                 <div>
                     <Link className="link" to={routes.SIGN_IN}>Log In</Link>
                     <Link className="link" to={routes.SIGN_UP}>Sign Up</Link>

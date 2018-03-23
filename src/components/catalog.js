@@ -9,8 +9,8 @@ class Catalog extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          rooms        : [],
-          authUser     : null
+            rooms: [],
+            authUser: null
         };
 
         this.getRooms = this.getRooms.bind(this);
@@ -18,11 +18,11 @@ class Catalog extends Component {
 
     componentWillMount() {
         firebase.auth.onAuthStateChanged(authUser => {
-          this.setState(() => ({ authUser }));
+            this.setState(() => ({ authUser }));
         });
 
         db.onceGetRooms().then(snapshot => {
-            this.setState(() => ({rooms : snapshot.val()}));
+            this.setState(() => ({ rooms: snapshot.val() }));
         });
     }
 
@@ -30,10 +30,10 @@ class Catalog extends Component {
         let rooms = this.state.rooms;
         let roomComp = [];
         let ctr = 0;
-        Object.keys(rooms).forEach(function(id) {
-            if(ctr >= start && ctr < end) {
+        Object.keys(rooms).forEach(function (id) {
+            if (ctr >= start && ctr < end) {
                 var val = rooms[id];
-                roomComp.push(<Room room={val} room_id={id} key={id}/>);
+                roomComp.push(<Room room={val} room_id={id} key={id} />);
             }
             ctr++;
         });
@@ -56,10 +56,17 @@ class Catalog extends Component {
                                 <div className="rooms-row">
                                     {this.getRooms(2, 5)}
                                 </div>
-                            </div> 
+                            </div>
                         </div> :
-                        <div>
-                            <img />
+                        <div className="home-wrapper">
+                            <article>
+                                <h1>Meeet.</h1>
+                                <p>Meet at the right time in the right place.</p>
+                            </article>
+                            <div className="image-wrapper">
+                                <img src="/images/meeet-image.png" alt="" />
+                            </div>
+
                         </div>
                     }
                 </div>
