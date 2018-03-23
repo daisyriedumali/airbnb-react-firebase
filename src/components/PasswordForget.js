@@ -3,12 +3,17 @@ import { Link } from 'react-router-dom';
 
 import { auth } from '../firebase';
 import * as routes from '../constants/routes';
+import Header from './common/header'
 
 const PasswordForgetPage = () =>
-  <div className='pw-forgot'>
-    <h1>Forgot Password?</h1>
-    <PasswordForgetForm />
-    <Link to={routes.LANDING}><div className='landing-logo'></div></Link>
+  <div>
+    <Header />
+    <div className='pw-forgot-wrapper'>
+      <h2>Forgot Password?</h2>
+      <div className="form-wrapper">
+        <PasswordForgetForm />
+      </div>
+    </div>
   </div>
 
 const byPropKey = (propertyName, value) => () => ({
@@ -32,7 +37,7 @@ class PasswordForgetForm extends Component {
 
     auth.doPasswordReset(email)
       .then(() => {
-        this.setState(() => ({email:'', error:null, success:'An email has been sent to reset your password.'}));
+        this.setState(() => ({ email: '', error: null, success: 'An email has been sent to reset your password.' }));
       })
       .catch(error => {
         this.setState(byPropKey('error', error));
@@ -52,13 +57,14 @@ class PasswordForgetForm extends Component {
     return (
       <form onSubmit={this.onSubmit}>
         <input
+          className="forgot-email"
           value={this.state.email}
           onChange={event => this.setState(byPropKey('email', event.target.value))}
           type="text"
           placeholder="Email Address"
         />
-        { error && <p className='error-msg'>{error.message}</p> }
-        { this.state.success && <p className='error-msg'>{this.state.success}</p> }
+        {error && <p className='error-msg'>{error.message}</p>}
+        {this.state.success && <p className='error-msg'>{this.state.success}</p>}
         <div className='pw-forgot-btn'>
           <button disabled={isInvalid} type="submit">
             Reset My Password
