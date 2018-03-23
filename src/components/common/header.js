@@ -4,22 +4,22 @@ import * as routes from '../../constants/routes';
 import PropTypes from 'prop-types';
 
 const Header = (props, { authUser }) => {
-  if (typeof authUser != 'undefined') {
-    return  (
-        <div>
-            { authUser
-                ? <NavigationAuth />
-                : <NavigationNonAuth />
-            }
-        </div>
-    )
-  } else {
-    return null;
-  }
+    if (typeof authUser != 'undefined') {
+        return (
+            <div>
+                {authUser
+                    ? <NavigationAuth />
+                    : <NavigationNonAuth />
+                }
+            </div>
+        )
+    } else {
+        return null;
+    }
 }
 
 Header.contextTypes = {
-  authUser: PropTypes.object,
+    authUser: PropTypes.object,
 };
 
 const NavigationAuth = () => {
@@ -28,7 +28,7 @@ const NavigationAuth = () => {
             <div className='header-wrapper'>
                 <a className="app-name">Meeet.</a>
                 <div>
-                    
+
                     <Link className="link" to={routes.LANDING}>Rooms</Link>
                     <Link className="link" to={routes.MY_BOOKINGS}>My Bookings</Link>
                     <Link className="link" to={'Logout'}>Logout</Link>
@@ -48,9 +48,9 @@ const NavigationNonAuth = () => {
             <div className='header-wrapper'>
                 <a className="app-name">Meeet.</a>
                 <div>
-                   <Link className="link" to={routes.SIGN_IN}>Sign In</Link>
-                   <Link className="link" to={routes.SIGN_UP}>Sign Up</Link>
-                   <div className='user-icon'><img src='' /></div>
+                    <Link className="link" to={routes.SIGN_IN}>Sign In</Link>
+                    <Link className="link" to={routes.SIGN_UP}>Sign Up</Link>
+                    <div className='user-icon'><img src='/images/user-avatar-large.png' /></div>
                 </div>
             </div>
         </header>

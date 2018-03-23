@@ -7,14 +7,19 @@ import { auth } from '../firebase';
 import * as routes from '../constants/routes';
 
 import { Link } from 'react-router-dom';
+import Header from './common/header'
 
 const SignInPage = ({ history }) =>
-  <div className='sign-in'>
-    <h1>Sign In</h1>
-    <SignInForm history={history} />
-    <Link to={routes.LANDING}><div className='landing-logo'></div></Link>
-    <PasswordForgetLink />
-    <SignUpLink />
+  <div>
+    <Header />
+    <div className='login-wrapper'>
+      <h2>Log In</h2>
+      <div className="form-wrapper">
+        <SignInForm history={history} />
+        <PasswordForgetLink />
+        <SignUpLink />
+      </div>
+    </div>
   </div>
 
 const byPropKey = (propertyName, value) => () => ({
@@ -69,22 +74,25 @@ class SignInForm extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
+        <label htmlFor="">Email</label>
         <input
           value={email}
           onChange={event => this.setState(byPropKey('email', event.target.value))}
           type="text"
           placeholder="Email Address"
         />
+        <label htmlFor="">Password</label>
         <input
+          className="login-password"
           value={password}
           onChange={event => this.setState(byPropKey('password', event.target.value))}
           type="password"
           placeholder="Password"
         />
-        { error && <p className='error-msg'>{error.message}</p> }
+        {error && <p className='error-msg'>{error.message}</p>}
         <div className='sign-in-btn'>
           <button disabled={isInvalid} type="submit">
-            Sign In
+            Log In
           </button>
         </div>
       </form>

@@ -59,7 +59,12 @@ header {
     background: #2B66F4;
     height: 40px;
     width: 40px;
-    border-radius: 40px; }
+    border-radius: 40px;
+    overflow: hidden; }
+    header .user-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
 
 .landing {
   margin-top: 110px; }
@@ -212,108 +217,175 @@ header {
         line-height: 26px;
         font-family: Circular-Light; }
 
-.sign-in h1, .pw-forgot h1, .sign-up h1 {
-  text-align: center;
-  color: white;
-  font-size: 40px;
-  margin: 0px auto;
-  margin-top: 40%;
-  margin-bottom: 30px; }
+.login-wrapper, .pw-forgot-wrapper {
+  margin-top: 150px; }
+  .login-wrapper h2, .pw-forgot-wrapper h2 {
+    text-align: center;
+    font-family: Circular-Heavy;
+    font-size: 32px;
+    color: #26275D; }
+  .login-wrapper .form-wrapper, .pw-forgot-wrapper .form-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 396px;
+    height: auto;
+    padding: 36px 38px 50px;
+    margin: auto;
+    background: #F8F9FC;
+    border-top: 4px solid #2B66F4;
+    box-shadow: 0 3px 25px 0 rgba(40, 99, 242, 0.2); }
+  .login-wrapper form, .pw-forgot-wrapper form {
+    display: flex;
+    flex-direction: column; }
+    .login-wrapper form label, .pw-forgot-wrapper form label {
+      font-size: 20px;
+      font-family: Circular-Medium;
+      margin-bottom: 8px; }
+    .login-wrapper form input, .pw-forgot-wrapper form input {
+      font-size: 20px;
+      font-family: Circular-Light;
+      max-width: 100%;
+      height: 50px;
+      padding: 0 16px;
+      background: #fff;
+      border: 1px solid #D5D5D5;
+      border-radius: 3px;
+      margin-bottom: 32px; }
+      .login-wrapper form input.login-password, .login-wrapper form input.forgot-email, .pw-forgot-wrapper form input.login-password, .pw-forgot-wrapper form input.forgot-email {
+        margin-bottom: 5px; }
+    .login-wrapper form button, .pw-forgot-wrapper form button {
+      cursor: pointer;
+      background: #2B66F4;
+      border-radius: 3px;
+      font-family: Circular-Medium;
+      font-size: 20px;
+      color: #FFFFFF;
+      width: 100%;
+      height: 50px;
+      border: none;
+      margin-top: 32px; }
+  .login-wrapper .forgot-pw, .pw-forgot-wrapper .forgot-pw {
+    text-align: center; }
+    .login-wrapper .forgot-pw a, .pw-forgot-wrapper .forgot-pw a {
+      color: #2B66F4;
+      text-decoration: none; }
+      .login-wrapper .forgot-pw a:hover, .pw-forgot-wrapper .forgot-pw a:hover {
+        text-decoration: underline; }
+  .login-wrapper .no-account, .pw-forgot-wrapper .no-account {
+    text-align: center;
+    margin: 0; }
+    .login-wrapper .no-account a, .pw-forgot-wrapper .no-account a {
+      color: #2B66F4;
+      text-decoration: none; }
+      .login-wrapper .no-account a:hover, .pw-forgot-wrapper .no-account a:hover {
+        text-decoration: underline; }
 
-.sign-in form, .pw-forgot form, .sign-up form, .pw-change form, .links-page form {
-  width: 90%;
-  margin: 0 auto; }
+.signup-wrapper {
+  margin-top: 150px; }
+  .signup-wrapper h2 {
+    text-align: center;
+    font-family: Circular-Heavy;
+    font-size: 32px;
+    color: #26275D; }
+  .signup-wrapper .form-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 396px;
+    height: auto;
+    padding: 36px 38px 50px;
+    margin: auto;
+    background: #F8F9FC;
+    border-top: 4px solid #06B14C;
+    box-shadow: 0 3px 25px 0 rgba(7, 89, 40, 0.15); }
+  .signup-wrapper form {
+    display: flex;
+    flex-direction: column; }
+    .signup-wrapper form label {
+      font-size: 20px;
+      font-family: Circular-Medium;
+      margin-bottom: 8px; }
+    .signup-wrapper form input {
+      font-size: 20px;
+      font-family: Circular-Light;
+      max-width: 100%;
+      height: 50px;
+      padding: 0 16px;
+      background: #fff;
+      border: 1px solid #D5D5D5;
+      border-radius: 3px;
+      margin-bottom: 32px; }
+      .signup-wrapper form input.confirm-password {
+        margin-bottom: 5px; }
+    .signup-wrapper form button {
+      cursor: pointer;
+      background: #06B14C;
+      border-radius: 3px;
+      font-family: Circular-Medium;
+      font-size: 20px;
+      color: #FFFFFF;
+      width: 100%;
+      height: 50px;
+      border: none;
+      margin-top: 32px; }
 
-.sign-in form input, .pw-forgot form input, .sign-up form input, .pw-change form input, .links-page form input {
-  width: 95%;
-  padding: 7px 7px;
-  margin: 5px 0px;
-  border: 0; }
-
-.sign-in form .sign-in-btn, .pw-forgot form .pw-forgot-btn, .sign-up form .sign-up-btn, .pw-change form .pw-change-btn, .links-page form .add-link {
-  width: 100%;
-  display: flex; }
-
-.landing button, .sign-in form .sign-in-btn button, .pw-forgot form .pw-forgot-btn button, .sign-up form .sign-up-btn button, .pw-change form .pw-change-btn button, .links-page form .add-link button {
-  margin: 0 auto;
-  width: 50%;
-  margin-top: 5px;
-  height: 28px;
-  border-radius: 3px;
-  background-color: #f08b8b;
-  color: #ffffff;
-  border: 0; }
-
-.sign-in .landing-logo {
-  background-image: url("/images/logo.png");
-  width: 50px;
-  height: 50px;
-  background-size: 70px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  margin: 100px auto 20px; }
-
-.sign-in .forgot-pw, .sign-in .no-account {
-  text-align: center;
-  margin: 10px 0;
-  font-size: 13px; }
-
-.sign-in .forgot-pw a, .sign-in .no-account a {
-  text-decoration: none;
-  color: #f08b8b; }
-
-.pw-forgot .landing-logo, .sign-up .landing-logo {
-  background-image: url("/images/logo.png");
-  width: 50px;
-  height: 50px;
-  background-size: 70px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  margin: 200px auto 20px; }
-
-.sign-up .landing-logo {
-  background-image: url("/images/logo.png");
-  width: 50px;
-  height: 50px;
-  background-size: 70px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  margin: 150px auto 20px; }
-
-.acc-page-main .wrap {
-  word-wrap: break-word; }
-
-.acc-page-main h2, .links-page h2, .links-page h1 {
-  text-align: center;
-  color: white;
-  margin: 0px auto; }
-
-.acc-page-main .person-icon {
-  background-image: url("/images/person.png");
-  width: 80px;
-  height: 80px;
-  background-size: 70px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  margin: 50px auto 10px;
-  border-radius: 50px; }
-
-.acc-page-main .details {
-  margin: 50px 20px 10px; }
-
-.acc-page {
-  margin-top: 300px;
-  text-align: center;
-  color: #ffe1e1;
-  bottom: 50px;
-  right: 25%;
-  left: 25%;
-  position: absolute; }
-
-.acc-page a {
-  text-decoration: none;
-  color: #ffe1e1;
-  font-size: 13px; }
+.acc-page-wrapper {
+  margin-top: 150px; }
+  .acc-page-wrapper h2 {
+    text-align: center;
+    font-family: Circular-Heavy;
+    font-size: 32px;
+    color: #26275D; }
+  .acc-page-wrapper .details-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 396px;
+    height: auto;
+    padding: 36px 38px 50px;
+    margin: auto;
+    background: #F8F9FC;
+    border-top: 4px solid #2B66F4;
+    box-shadow: 0 3px 25px 0 rgba(40, 99, 242, 0.2); }
+    .acc-page-wrapper .details-wrapper label {
+      font-size: 20px;
+      font-family: Circular-Medium;
+      margin-bottom: 8px;
+      color: #26275D; }
+    .acc-page-wrapper .details-wrapper p {
+      font-size: 20px;
+      font-family: Circular-Light;
+      max-width: 100%;
+      margin-top: 0;
+      margin-bottom: 24px; }
+    .acc-page-wrapper .details-wrapper form {
+      display: flex;
+      flex-direction: column; }
+      .acc-page-wrapper .details-wrapper form label {
+        font-size: 20px;
+        font-family: Circular-Medium;
+        margin-bottom: 8px; }
+      .acc-page-wrapper .details-wrapper form input {
+        font-size: 20px;
+        font-family: Circular-Light;
+        max-width: 100%;
+        height: 50px;
+        padding: 0 16px;
+        background: #fff;
+        border: 1px solid #D5D5D5;
+        border-radius: 3px;
+        margin-bottom: 32px; }
+        .acc-page-wrapper .details-wrapper form input.confirm-password {
+          margin-bottom: 5px; }
+      .acc-page-wrapper .details-wrapper form button {
+        cursor: pointer;
+        background: #2B66F4;
+        border-radius: 3px;
+        font-family: Circular-Medium;
+        font-size: 20px;
+        color: #FFFFFF;
+        width: 100%;
+        height: 50px;
+        border: none;
+        margin-top: 32px; }
 
 .error-msg {
   font-size: 12px;

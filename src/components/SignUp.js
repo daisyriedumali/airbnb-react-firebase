@@ -5,12 +5,17 @@ import {
 } from 'react-router-dom';
 import { auth, db } from '../firebase';
 import * as routes from '../constants/routes';
+import Header from './common/header'
 
 const SignUpPage = ({ history }) =>
-  <div className='sign-up'>
-    <h1>SignUp</h1>
-    <SignUpForm history={history} />
-    <Link to={routes.LANDING}><div className='landing-logo'></div></Link>
+  <div>
+    <Header />
+    <div className='signup-wrapper'>
+      <h2>Sign Up</h2>
+      <div className="form-wrapper">
+        <SignUpForm history={history} />
+      </div>
+    </div>
   </div>
 
 const INITIAL_STATE = {
@@ -81,31 +86,36 @@ class SignUpForm extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
+        <label htmlFor="">Name</label>
         <input
           value={username}
           onChange={event => this.setState(byPropKey('username', event.target.value))}
           type="text"
           placeholder="Full Name"
         />
+        <label htmlFor="">Email</label>
         <input
           value={email}
           onChange={event => this.setState(byPropKey('email', event.target.value))}
           type="text"
           placeholder="Email Address"
         />
+        <label htmlFor="">Password</label>
         <input
           value={passwordOne}
           onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
           type="password"
           placeholder="Password"
         />
+        <label htmlFor="">Confirm Password</label>
         <input
+          className="confirm-password"
           value={passwordTwo}
           onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
           type="password"
           placeholder="Confirm Password"
         />
-        { error && <p className='error-msg'>{error.message}</p> }
+        {error && <p className='error-msg'>{error.message}</p>}
         <div className='sign-up-btn'>
           <button disabled={isInvalid} type="submit">
             Sign Up
