@@ -17,6 +17,7 @@ class MyBookings extends Component {
 
         this.fetchMyBookings  = this.fetchMyBookings.bind(this);
         this.renderMyBookings = this.renderMyBookings.bind(this);
+        this.onDeleteBooking  = this.onDeleteBooking.bind(this);
     }
 
     componentWillMount() {
@@ -33,14 +34,26 @@ class MyBookings extends Component {
         });
     }
 
+    onDeleteBooking(id) {
+        let uid = (this.state.authUser!=null) ? this.state.authUser.uid : '';
+        db.onceRemoveBooking(id)
+          .then(() => {
+            this.fetchMyBookings();
+          })
+          .catch(error => {
+        });
+    }
+
     fetchMyBookings() {
         db.onceGetBookingsByUserId(this.state.authUser.uid).then(snapshot => {
             let time_now = new Date();
             let timestamp = time_now.getTime();
-            console.log(timestamp);
+            
             let val = snapshot.val();
             let bookings = [];
             Object.keys(val).forEach(function(id) {
+                let _b = val[id];
+                _b.id = id;
                 bookings.push(val[id]);
             });
 
@@ -64,10 +77,12 @@ class MyBookings extends Component {
 
     renderMyBookings(type) {
         if(this.state.bookings != null) {
+            let onDel = this.onDeleteBooking;
+            let _this = this;
             let bookings = this.state.bookings;
             let rooms = this.state.rooms;
             let render_booking = [];
-
+            
             this.state[type].forEach(function(booking) {
                 let _rid = booking.room_id;
 
@@ -81,16 +96,27 @@ class MyBookings extends Component {
                                 <h3>{rooms[id].name}</h3>
                                 <p className="date">{moment(booking.check_in).format('L LTS')}</p>
                                 <p className="time">{moment(booking.check_out).format('L LTS')}</p>
+                                { type == 'future_bookings' &&
+                                  <button onClick={onDel.bind(_this, booking.id)}>X</button> }
                             </div>
                         );
                     }
                 });
             });
+
+            if(render_booking.length == 0) {
+                render_booking.push(
+                    <div className="room-card">
+                        You have no {type == 'future_bookings' ? 'Upcoming' : 'Past'} Booking
+                    </div>
+                );
+            }
             return render_booking;
         }
     }
 
     render() {
+        // console.log(this.state.authUser != null && this.state.authUser.uid)
         return (
             <div>
               <Header />

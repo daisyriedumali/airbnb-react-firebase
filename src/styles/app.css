@@ -20,6 +20,7 @@ a {
 
 header {
   position: fixed;
+  z-index: 100;
   width: 100%;
   top: 0;
   height: 80px;
@@ -198,7 +199,6 @@ header {
         font-family: Circular-Light;
         margin: 0; }
   .reserve-wrapper .calendar-wrapper {
-    background: #F8F9FC;
     height: 500px;
     margin-bottom: 50px; }
 

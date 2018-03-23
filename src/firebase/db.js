@@ -34,4 +34,6 @@ export const getRoomByRoomId = (room_id) =>
 export const onceGetBookingsByRoomId = (room_id) =>
   db.ref('bookings').orderByChild("room_id").equalTo(room_id).once('value');
 
+export const onceRemoveBooking = (booking_id) =>
+  db.ref(`bookings/${booking_id}`).remove();
 // Other Entity APIs ...
