@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import * as routes from '../constants/routes';
 import Header from './common/header';
 import DateTime from 'react-datetime';
-import '../styles/react-datetime.scss';
+import '../styles/react-datetime.css';
 import moment from 'moment';
 import { auth, db, firebase } from '../firebase';
 import PropTypes from 'prop-types';
@@ -17,6 +17,8 @@ class MakeReservation extends Component {
     this.state = {
       title         : '',
       desc          : '',
+      roomName      : '',
+      roomDesc      : '',
       roomId        : props.params.match.params.room,
       startDateTime : curDate,
       endDateTime   : curDate,
@@ -40,6 +42,19 @@ class MakeReservation extends Component {
       this.setState(() => ({ authUser }));
     });
     this.getEvents();
+    this.getRoom();
+  }
+  
+  getRoom() {
+    db.getRoomByRoomId(this.state.roomId)
+      .then((result) => {
+        console.log(result.val());
+        let room = result.val();
+        this.setState({roomName: room.name, roomDesc: room.description});
+      })
+      .catch(error => {
+        console.log(error);
+    });
   }
 
   getEvents() {
@@ -135,7 +150,7 @@ class MakeReservation extends Component {
       <div>
         <Header />
         <div className="reserve-wrapper width-lg">
-          <h2>Room Name</h2>
+          <h2>{this.state.roomName}</h2>
           <div className="top-row width-lg">
             <div className="booking-form">
               <form method="POST" onSubmit={this.handleSubmit}>
@@ -155,8 +170,8 @@ class MakeReservation extends Component {
                 <img src="/images/room.jpg" alt="" />
               </div>
               <div className="the-room">
-                <h4>The Room</h4>
-                <p>Kogi Cosby sweater ethical squid irony disrupt, organic tote bag gluten-free XOXO wolf typewriter mixtape small batch.</p>
+                <h4>{this.state.roomName}</h4>
+                <p>{this.state.roomDesc}</p>
               </div>
               <div className="amenities">
                 <h4>Amenities</h4>
