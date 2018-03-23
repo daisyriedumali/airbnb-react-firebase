@@ -76,6 +76,56 @@ a {
       border-radius: 40px;
     }
   }
+  h2 {
+    font-family: Circular-Medium;
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+  .rooms-wrapper {
+    .rooms-row {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 60px;
+      .room-card {
+        &.large {
+          margin-right: 30px;
+          width: 610px;
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+        &.small {
+          margin-right: 30px;
+          width: 396px;
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+        .room-photo {
+          background: #cecece;
+          width: 100%;
+          height: 275px;
+          margin-bottom: 18px;
+          overflow: hidden;
+          img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .name {
+          font-family: Circular-Heavy;
+          font-size: 24px;
+          margin-bottom: 8px;
+        }
+        .description {
+          margin: 0;
+          font-family: Circular-Light;
+          font-size: 18px;
+        }
+      }
+    }
+  }
 }
 
 .landing-logo {
