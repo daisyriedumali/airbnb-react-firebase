@@ -26,4 +26,7 @@ export const doCreateUserReservation = (user_id, room_id, check_in, check_out, g
 
 export const onceGetBookingsByUserId = (user_id) =>
   db.ref('bookings').orderByChild("user_id").equalTo(user_id).once('value');
+
+export const getRoomByRoomId = (room_id) =>
+  db.ref(`rooms/${room_id}`).once('value');
 // Other Entity APIs ...
