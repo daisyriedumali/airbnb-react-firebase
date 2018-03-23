@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import * as routes from '../constants/routes';
 import Header from './common/header';
 import DateTime from 'react-datetime';
-import '../styles/react-datetime.css';
+import '../styles/react-datetime.scss';
 import moment from 'moment';
 import { auth, db, firebase } from '../firebase';
 import PropTypes from 'prop-types';
 import BigCalendar from 'react-big-calendar';
 BigCalendar.momentLocalizer(moment); // or globalizeLocalizer
-
+   
 class MakeReservation extends Component {
   constructor(props) {
     super(props);
@@ -23,7 +23,7 @@ class MakeReservation extends Component {
       startDateTimeTimestamp : curDate.getTime(),
       endDateTimeTimeTimestamp : curDate.getTime(),
       events: []
-    }
+    }  
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleStartDateTimeChange = this.handleStartDateTimeChange.bind(this);
