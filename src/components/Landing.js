@@ -6,7 +6,7 @@ import * as routes from '../constants/routes';
 const LandingPage = () =>
   <div className='landing'>
     <div className='landing-logo'></div>
-    <h1><Link to={routes.LANDING}>App Name</Link></h1>
+    <h1><Link to={routes.LANDING}>Meeet.</Link></h1>
     <Navigation />
   </div>
 
