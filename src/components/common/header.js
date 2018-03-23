@@ -31,10 +31,9 @@ const NavigationAuth = () => {
 
                     <Link className="link" to={routes.LANDING}>Rooms</Link>
                     <Link className="link" to={routes.MY_BOOKINGS}>My Bookings</Link>
-                    <Link className="link" to={'Logout'}>Logout</Link>
+                    <Link className="link" to={routes.SIGN_IN}>Logout</Link>
                     <Link to={routes.ACCOUNT}>
-                        <div className='user-icon'>
-                        </div>
+                        <div className='user-icon'><img src='/images/user-avatar-large.png' /></div>
                     </Link>
                 </div>
             </div>
@@ -48,7 +47,7 @@ const NavigationNonAuth = () => {
             <div className='header-wrapper'>
                 <a className="app-name">Meeet.</a>
                 <div>
-                    <Link className="link" to={routes.SIGN_IN}>Sign In</Link>
+                    <Link className="link" to={routes.SIGN_IN}>Log In</Link>
                     <Link className="link" to={routes.SIGN_UP}>Sign Up</Link>
                     <div className='user-icon'><img src='/images/user-avatar-large.png' /></div>
                 </div>
