@@ -27,7 +27,7 @@ const App = () =>
       <Route exact path={routes.ACCOUNT}            component={() => <AccountPage />} />
       <Route exact path={routes.HOME}               component={() => <HomePage />} />
       <Route exact path={routes.RESERVE}            component={() => <MakeReservation />} />
-      <Route exact path={routes.VIEW_RESERVATIONS}  component={() => <Reservations />} />
+      <Route exact path={routes.MY_BOOKINGS}  component={() => <Reservations />} />
     </div>
   </Router>
 
