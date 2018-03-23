@@ -70,7 +70,6 @@ class MakeReservation extends Component {
   }
   
   handleSelectDate (slotInfo) {
-    console.log(slotInfo);
     this.setState({view: 'day', day: slotInfo.start});
   }
 
@@ -91,17 +90,33 @@ class MakeReservation extends Component {
     let date = new Date(dateTime.format('L LTS'));
     this.setState({endDateTime: date, endDateTimeTimeTimestamp: date.getTime()});
   }
+  
+  validateReservation () {
+    let valid = true;
+    
+    this.state.events.map((event) => {
+      if (Math.max(0, Math.min(event.end, this.state.endDateTime) - Math.max(event.start, this.state.startDateTime)) > 0) {
+        valid = false;
+      }
+    });
+
+    return valid;
+  }
 
   handleSubmit(e) {
     e.preventDefault();
-    let uid = (this.state.authUser != null) ? this.state.authUser.uid : '';
-    db.doCreateUserReservation(uid, this.state.roomId, this.state.title, this.state.startDateTime, this.state.startDateTimeTimestamp, this.state.endDateTime, this.state.endDateTimeTimeTimestamp)
-      .then((result) => {
-        console.log(result.val());
-      })
-      .catch(error => {
-        console.log(error);
-    });
+    if (this.validateReservation()) {
+      let uid = (this.state.authUser != null) ? this.state.authUser.uid : '';
+      db.doCreateUserReservation(uid, this.state.roomId, this.state.title, this.state.startDateTime, this.state.startDateTimeTimestamp, this.state.endDateTime, this.state.endDateTimeTimeTimestamp)
+        .then((result) => {
+          this.getEvents();
+        })
+        .catch(error => {
+          console.log(error);
+      });
+    } else {
+      alert('Overlaps with another reservation');
+    }
   }
   
   handleChange (field) {

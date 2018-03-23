@@ -22,6 +22,7 @@ a {
 
 header {
   position: fixed;
+  z-index: 100;
   width: 100%;
   top: 0;
   height: 80px;
@@ -52,6 +53,8 @@ header {
     &.app-name {
       font-family: Circular-Heavy;
       font-size: 32px;
+      color: #fff;
+      text-decoration: none;
     }
     &.link {
       font-family: Circular-Light;
@@ -135,6 +138,38 @@ header {
       }
     }
   }
+
+  .home-wrapper {
+    display: flex;
+    flex-direction: row;
+    article {
+      display: flex;
+      flex-direction: column;
+      color: #26275D;
+      width: 434px;
+      margin-right: 90px;
+      justify-content: center;
+      h1 {
+        font-size: 72px;
+        line-height: 80px;
+        font-family: Circular-Heavy;
+        margin-bottom: 5px;
+        margin-top: 0;
+      }
+      p {
+        font-size: 40px;
+        font-family: Circular-Medium;
+        margin: 0;
+      }
+    }
+    .image-wrapper {
+      width: 740px;
+      img {
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
 }
 
 .reserve-wrapper {
@@ -211,7 +246,6 @@ header {
     }
   }
   .calendar-wrapper {
-    background: #F8F9FC;
     height: 500px;
     margin-bottom: 50px;
   }
