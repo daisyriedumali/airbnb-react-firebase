@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import Header from './common/header';
 
-const MyBookings = ({props}) => {
+const MyBookings = ({ props }) => {
   return (
-    <div className="landing">
+    <div>
       <Header />
-      My Bookings
+      <div className="bookings-wrapper width-lg">
+        <h2>Upcoming Bookings</h2>
+        <div className="upcoming-wrapper">
+
+        </div>
+      </div>
     </div>
   );
 }

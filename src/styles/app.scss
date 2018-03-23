@@ -201,13 +201,20 @@ header {
   
 }
 
+.bookings-wrapper {
+  h2 {
+    font-family: Circular-Medium;
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+}
 
 
 
 
 
 .landing-logo {
-  background-image: url("../images/logo.png");
+  background-image: url("/images/logo.png");
   width: 200px;
   height: 200px;
   background-size: 300px;
@@ -271,7 +278,7 @@ header {
   border: 0; }
 
 .sign-in .landing-logo {
-  background-image: url("../images/logo.png");
+  background-image: url("/images/logo.png");
   width: 50px;
   height: 50px;
   background-size: 70px;
@@ -289,7 +296,7 @@ header {
   color: #f08b8b; }
 
 .pw-forgot .landing-logo, .sign-up .landing-logo {
-  background-image: url("../images/logo.png");
+  background-image: url("/images/logo.png");
   width: 50px;
   height: 50px;
   background-size: 70px;
@@ -298,7 +305,7 @@ header {
   margin: 200px auto 20px; }
 
 .sign-up .landing-logo {
-  background-image: url("../images/logo.png");
+  background-image: url("/images/logo.png");
   width: 50px;
   height: 50px;
   background-size: 70px;
@@ -315,7 +322,7 @@ header {
   margin: 0px auto; }
 
 .acc-page-main .person-icon {
-  background-image: url("../images/person.png");
+  background-image: url("/images/person.png");
   width: 80px;
   height: 80px;
   background-size: 70px;
@@ -350,24 +357,24 @@ header {
 
 @font-face {
     font-family: 'Circular-Heavy';
-    src: url('../fonts/CircularStd-Black.woff2') format('woff2'),
-        url('../fonts/CircularStd-Black.woff') format('woff');
+    src: url('/fonts/CircularStd-Black.woff2') format('woff2'),
+        url('/fonts/CircularStd-Black.woff') format('woff');
     font-weight: 900;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Circular-Medium';
-    src: url('../fonts/CircularStd-Medium.woff2') format('woff2'),
-        url('../fonts/CircularStd-Medium.woff') format('woff');
+    src: url('/fonts/CircularStd-Medium.woff2') format('woff2'),
+        url('/fonts/CircularStd-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Circular-Light';
-    src: url('../fonts/CircularStd-Book.woff2') format('woff2'),
-        url('../fonts/CircularStd-Book.woff') format('woff');
+    src: url('/fonts/CircularStd-Book.woff2') format('woff2'),
+        url('/fonts/CircularStd-Book.woff') format('woff');
     font-weight: 500;
     font-style: normal;
 }
