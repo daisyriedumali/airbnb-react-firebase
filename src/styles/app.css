@@ -51,6 +51,44 @@ a {
     width: 40px;
     border-radius: 40px; }
 
+.landing h2 {
+  font-family: Circular-Medium;
+  font-size: 32px;
+  margin-bottom: 24px; }
+
+.landing .rooms-wrapper .rooms-row {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 60px; }
+  .landing .rooms-wrapper .rooms-row .room-card.large {
+    margin-right: 30px;
+    width: 610px; }
+    .landing .rooms-wrapper .rooms-row .room-card.large:last-child {
+      margin-right: 0; }
+  .landing .rooms-wrapper .rooms-row .room-card.small {
+    margin-right: 30px;
+    width: 396px; }
+    .landing .rooms-wrapper .rooms-row .room-card.small:last-child {
+      margin-right: 0; }
+  .landing .rooms-wrapper .rooms-row .room-card .room-photo {
+    background: #cecece;
+    width: 100%;
+    height: 275px;
+    margin-bottom: 18px;
+    overflow: hidden; }
+    .landing .rooms-wrapper .rooms-row .room-card .room-photo img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%; }
+  .landing .rooms-wrapper .rooms-row .room-card .name {
+    font-family: Circular-Heavy;
+    font-size: 24px;
+    margin-bottom: 8px; }
+  .landing .rooms-wrapper .rooms-row .room-card .description {
+    margin: 0;
+    font-family: Circular-Light;
+    font-size: 18px; }
+
 .landing-logo {
   background-image: url("../images/logo.png");
   width: 200px;
