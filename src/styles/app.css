@@ -18,13 +18,13 @@ a {
 #content {
   min-height: 100%; }
 
-.landing header {
+header {
   height: 80px;
   background: #25265E;
   display: flex;
   align-items: center;
   justify-content: center; }
-  .landing header .header-wrapper {
+  header .header-wrapper {
     width: 100%;
     max-width: 1250px;
     color: #fff;
@@ -32,20 +32,27 @@ a {
     flex-direction: row;
     align-items: center;
     justify-content: space-between; }
-    .landing header .header-wrapper > div {
+    header .header-wrapper > div {
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: space-between; }
-  .landing header a {
+  header a {
     margin-right: 40px; }
-    .landing header a.app-name {
+    header a:last-child {
+      margin-right: 0; }
+    header a.app-name {
       font-family: Circular-Heavy;
       font-size: 32px; }
-    .landing header a.link {
+    header a.link {
       font-family: Circular-Light;
-      font-size: 20px; }
-  .landing header .user-icon {
+      font-size: 20px;
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 2px solid transparent; }
+      header a.link.active {
+        border-bottom: 2px solid #fff; }
+  header .user-icon {
     background: #2B66F4;
     height: 40px;
     width: 40px;
@@ -88,6 +95,71 @@ a {
     margin: 0;
     font-family: Circular-Light;
     font-size: 18px; }
+
+.reserve-wrapper h2 {
+  font-family: Circular-Medium;
+  font-size: 32px;
+  margin-bottom: 24px; }
+
+.reserve-wrapper .top-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-bottom: 48px; }
+  .reserve-wrapper .top-row .booking-form {
+    background: #F8F9FC;
+    width: 396px;
+    height: 395px;
+    margin-right: 30px;
+    padding: 50px 38px; }
+    .reserve-wrapper .top-row .booking-form form {
+      display: flex;
+      flex-direction: column; }
+      .reserve-wrapper .top-row .booking-form form label {
+        font-size: 20px;
+        font-family: Circular-Medium;
+        margin-bottom: 8px; }
+      .reserve-wrapper .top-row .booking-form form input {
+        font-size: 20px;
+        font-family: Circular-Light;
+        max-width: 100%;
+        height: 50px;
+        padding: 0 16px;
+        background: #fff;
+        border: 1px solid #D5D5D5;
+        border-radius: 3px;
+        margin-bottom: 32px; }
+      .reserve-wrapper .top-row .booking-form form .book-cta {
+        color: #fff;
+        font-size: 20px;
+        font-family: Circular-Medium;
+        border-radius: 3px;
+        border: 1px solid #06B14C;
+        width: 100%;
+        height: 50px;
+        background: #06B14C;
+        box-shadow: 0 3px 15px 0 rgba(6, 167, 71, 0.4); }
+  .reserve-wrapper .top-row .room-information {
+    width: 823px; }
+    .reserve-wrapper .top-row .room-information .room-photo {
+      height: 420px; }
+      .reserve-wrapper .top-row .room-information .room-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; }
+    .reserve-wrapper .top-row .room-information h4 {
+      font-size: 22px;
+      font-family: Circular-Heavy;
+      margin-bottom: 12px; }
+    .reserve-wrapper .top-row .room-information p {
+      font-size: 18px;
+      font-family: Circular-Light;
+      margin: 0; }
+
+.reserve-wrapper .calendar-wrapper {
+  background: #F8F9FC;
+  height: 500px;
+  margin-bottom: 50px; }
 
 .landing-logo {
   background-image: url("/images/logo.png");
